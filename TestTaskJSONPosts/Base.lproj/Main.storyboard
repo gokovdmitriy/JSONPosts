@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O1z-r2-RIM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestTaskJSONPosts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V8Q-WB-efL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9pC-TG-sJv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AKi-8F-Ng0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V8Q-WB-efL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Md5-cZ-wEM"/>
+                            <constraint firstItem="V8Q-WB-efL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UnT-NZ-CrS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V8Q-WB-efL" secondAttribute="trailing" id="gj3-01-zYc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V8Q-WB-efL" secondAttribute="bottom" id="z1e-dv-mqY"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HiK-2G-VD9"/>
+                    <connections>
+                        <outlet property="tableView" destination="V8Q-WB-efL" id="73V-SI-ARe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1503" y="98"/>
+        </scene>
+        <!--PostViewController-->
+        <scene sceneID="EUq-J3-HTM">
+            <objects>
+                <viewController storyboardIdentifier="PostViewController" id="fgH-lc-6Jh" userLabel="PostViewController" customClass="PostViewController" customModule="TestTaskJSONPosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ECZ-5o-l3U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cMP-pl-F9S">
+                                <rect key="frame" x="5" y="54" width="404" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="zPr-2o-qn0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Ingenious Prank Music Legend Mozart Played On Someone He Couldn’t Stand" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3R-cJ-JI8" userLabel="title">
+                                <rect key="frame" x="52" y="324" width="310.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beZ-V1-0VV" userLabel="textDescription">
+                                <rect key="frame" x="52" y="382.5" width="310.5" height="358.5"/>
+                                <string key="text">The classical composer humiliated someone he found to be offensive and annoying with his music\n\nHundreds of years after he last walked the earth, prolific composer Wolfgang Amadeus Mozart is still synonymous with classical music, his more than 600 compositions still beguile and entertain the masses around the world. In addition to be a refined artist, he was also a bit of a jokester and liked to have fun at the expense of others. This included an ingenious prank he once pulled in the form of a song on a person he could not stand.\n\nMozart was born in Austria and packed a lot into a short life. Passing away in 1791 at the age of 35, he was a veritable fountain of talent, producing jaw-dropping music with seeming ease. His rare understanding of notes, timing and instruments all contributed to his genius.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1645030659" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCG-xz-yhl" userLabel="timeshamp">
+                                <rect key="frame" x="265.5" y="761" width="108.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZRf-VO-G2s">
+                                <rect key="frame" x="20" y="762.5" width="21" height="17.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-zB-CT4" userLabel="likesCount">
+                                <rect key="frame" x="61" y="761" width="77.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gog-49-hpi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cWt-zB-CT4" firstAttribute="leading" secondItem="ZRf-VO-G2s" secondAttribute="trailing" constant="20" id="0t0-jz-THB"/>
+                            <constraint firstItem="bCG-xz-yhl" firstAttribute="width" secondItem="beZ-V1-0VV" secondAttribute="width" multiplier="0.35" id="1uG-Mo-Sjv"/>
+                            <constraint firstItem="ZRf-VO-G2s" firstAttribute="top" secondItem="beZ-V1-0VV" secondAttribute="bottom" constant="20" id="2Ft-7v-Kq7"/>
+                            <constraint firstItem="cWt-zB-CT4" firstAttribute="top" secondItem="beZ-V1-0VV" secondAttribute="bottom" constant="20" id="Cjt-kP-6Fa"/>
+                            <constraint firstItem="cWt-zB-CT4" firstAttribute="width" secondItem="beZ-V1-0VV" secondAttribute="width" multiplier="0.25" id="Ed8-Jc-4hH"/>
+                            <constraint firstItem="bCG-xz-yhl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cWt-zB-CT4" secondAttribute="trailing" constant="8" symbolic="YES" id="H14-hk-tdH"/>
+                            <constraint firstItem="gog-49-hpi" firstAttribute="trailing" secondItem="cMP-pl-F9S" secondAttribute="trailing" constant="5" id="LMw-g0-bDH"/>
+                            <constraint firstItem="ZRf-VO-G2s" firstAttribute="leading" secondItem="gog-49-hpi" secondAttribute="leading" constant="20" id="Ma5-qs-ORH"/>
+                            <constraint firstItem="beZ-V1-0VV" firstAttribute="top" secondItem="l3R-cJ-JI8" secondAttribute="bottom" constant="20" id="TBG-aK-JVn"/>
+                            <constraint firstItem="beZ-V1-0VV" firstAttribute="height" secondItem="ECZ-5o-l3U" secondAttribute="height" multiplier="0.4" id="TQp-dJ-APW"/>
+                            <constraint firstItem="bCG-xz-yhl" firstAttribute="top" secondItem="beZ-V1-0VV" secondAttribute="bottom" constant="20" id="Xib-G4-UEo"/>
+                            <constraint firstItem="cMP-pl-F9S" firstAttribute="top" secondItem="gog-49-hpi" secondAttribute="top" constant="10" id="ZIK-z9-BiK"/>
+                            <constraint firstItem="l3R-cJ-JI8" firstAttribute="centerX" secondItem="ECZ-5o-l3U" secondAttribute="centerX" id="ZJD-VV-raq"/>
+                            <constraint firstItem="gog-49-hpi" firstAttribute="trailing" secondItem="bCG-xz-yhl" secondAttribute="trailing" constant="40" id="blU-Tz-iHV"/>
+                            <constraint firstItem="l3R-cJ-JI8" firstAttribute="top" secondItem="cMP-pl-F9S" secondAttribute="bottom" constant="20" id="j4t-e7-GG3"/>
+                            <constraint firstItem="l3R-cJ-JI8" firstAttribute="width" secondItem="ECZ-5o-l3U" secondAttribute="width" multiplier="0.75" id="jme-4G-Xxl"/>
+                            <constraint firstItem="beZ-V1-0VV" firstAttribute="centerX" secondItem="ECZ-5o-l3U" secondAttribute="centerX" id="kbU-Yd-RUG"/>
+                            <constraint firstItem="beZ-V1-0VV" firstAttribute="width" secondItem="ECZ-5o-l3U" secondAttribute="width" multiplier="0.75" id="lD3-7w-Aa3"/>
+                            <constraint firstItem="cMP-pl-F9S" firstAttribute="leading" secondItem="gog-49-hpi" secondAttribute="leading" constant="5" id="t19-9a-dwm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="heartCount" destination="cWt-zB-CT4" id="0dO-PF-rg9"/>
+                        <outlet property="nameTitle" destination="l3R-cJ-JI8" id="27p-EC-yQL"/>
+                        <outlet property="postImage" destination="cMP-pl-F9S" id="TLP-Qk-0v1"/>
+                        <outlet property="postedTime" destination="bCG-xz-yhl" id="Y2j-nJ-3Xe"/>
+                        <outlet property="textDescription" destination="beZ-V1-0VV" id="fog-xT-NgW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kua-Po-TcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2257.971014492754" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qpd-Et-JCd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O1z-r2-RIM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S1D-F6-bdu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wb9-Vg-YCm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pK-0o-0Vw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708.69565217391312" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
