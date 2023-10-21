@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="379" height="172"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Ingenious Prank Music Legend Mozart Played On Someone He Couldn’t Stand" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftn-zZ-fcb" userLabel="title">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Ingenious Prank Music Legend Mozart Played On Someone He Couldn’t Stand" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftn-zZ-fcb" userLabel="title">
                         <rect key="frame" x="5" y="10" width="369" height="45.5"/>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
                         <nil key="textColor"/>
@@ -29,41 +30,46 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19738" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4k-wa-am6" userLabel="likes_count">
-                        <rect key="frame" x="25" y="104" width="35" height="14.5"/>
+                        <rect key="frame" x="30" y="104" width="35" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1645030659" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83g-Ub-Iz6" userLabel="timeshamp">
-                        <rect key="frame" x="300" y="104" width="74" height="14.5"/>
+                        <rect key="frame" x="290" y="104" width="74" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vt-gp-diP">
                         <rect key="frame" x="25" y="123.5" width="329" height="31"/>
-                        <color key="backgroundColor" red="0.0028146610129999999" green="0.1439706087" blue="0.32685485479999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Button" image="suit.heart.fill" catalog="system"/>
                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
                         <connections>
                             <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1pI-zg-JRP"/>
                         </connections>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ksp-ga-fQu">
+                        <rect key="frame" x="5" y="102.5" width="21" height="17.5"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Ksp-ga-fQu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="0hJ-QT-Ktb"/>
                     <constraint firstItem="83g-Ub-Iz6" firstAttribute="top" secondItem="J6B-L0-voW" secondAttribute="bottom" constant="5" id="23A-In-Vg6"/>
+                    <constraint firstItem="B4k-wa-am6" firstAttribute="leading" secondItem="Ksp-ga-fQu" secondAttribute="trailing" constant="4" id="9xM-gJ-u5F"/>
                     <constraint firstItem="9Vt-gp-diP" firstAttribute="top" secondItem="B4k-wa-am6" secondAttribute="bottom" constant="5" id="Bcu-el-oaD"/>
                     <constraint firstItem="J6B-L0-voW" firstAttribute="top" secondItem="Ftn-zZ-fcb" secondAttribute="bottom" constant="5" id="FGh-ie-562"/>
-                    <constraint firstAttribute="trailing" secondItem="83g-Ub-Iz6" secondAttribute="trailing" constant="5" id="GiJ-Fy-Iyb"/>
+                    <constraint firstAttribute="trailing" secondItem="83g-Ub-Iz6" secondAttribute="trailing" constant="15" id="GiJ-Fy-Iyb"/>
                     <constraint firstAttribute="trailing" secondItem="Ftn-zZ-fcb" secondAttribute="trailing" constant="5" id="MCu-fM-K4a"/>
                     <constraint firstItem="Ftn-zZ-fcb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="NUW-lF-gCd"/>
                     <constraint firstItem="Ftn-zZ-fcb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="VhD-eq-pPY"/>
                     <constraint firstItem="J6B-L0-voW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="aeA-Tf-2PA"/>
                     <constraint firstAttribute="trailing" secondItem="J6B-L0-voW" secondAttribute="trailing" constant="5" id="avh-Om-blo"/>
                     <constraint firstItem="B4k-wa-am6" firstAttribute="top" secondItem="J6B-L0-voW" secondAttribute="bottom" constant="5" id="bbq-fc-v73"/>
+                    <constraint firstItem="Ksp-ga-fQu" firstAttribute="top" secondItem="J6B-L0-voW" secondAttribute="bottom" constant="2" id="e4z-yJ-6ro"/>
                     <constraint firstItem="9Vt-gp-diP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="ome-LF-YuZ"/>
-                    <constraint firstItem="B4k-wa-am6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="sIp-QE-nQe"/>
+                    <constraint firstItem="B4k-wa-am6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="sIp-QE-nQe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="9Vt-gp-diP" secondAttribute="trailing" constant="5" id="xXa-8c-2Tp"/>
                 </constraints>
             </tableViewCellContentView>
@@ -77,4 +83,11 @@
             <point key="canvasLocation" x="242.75362318840581" y="27.455357142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

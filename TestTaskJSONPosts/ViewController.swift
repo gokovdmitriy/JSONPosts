@@ -3,6 +3,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var sortBy: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var arrayOfPosts: [Posts] = []
     
@@ -10,8 +11,45 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         getPost()
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
-        
+        tableView.rowHeight = 210
+       let sortBy = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortButtonTapped))
+        navigationItem.rightBarButtonItem = sortBy
     }
+    @objc func sortButtonTapped() {
+        let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .actionSheet)
+
+        let sortByDateAction = UIAlertAction(title: "By date", style: .default) { _ in
+            
+            self.sortByDate()
+        }
+
+        let sortByRatingAction = UIAlertAction(title: "By likes", style: .default) { _ in
+            
+            self.sortByLikes()
+        }
+
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+
+        alertController.addAction(sortByDateAction)
+        alertController.addAction(sortByRatingAction)
+        alertController.addAction(cancelAction)
+        
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func sortByDate() {
+        print("sortByDate")
+        arrayOfPosts.sort { $0.timeshamp ?? 00 > $1.timeshamp ?? 00 }
+            tableView.reloadData()
+    }
+
+    func sortByLikes() {
+        print("sortByLikes")
+        arrayOfPosts.sort { $0.likes_count ?? 00 > $1.likes_count ?? 00 }
+            tableView.reloadData()
+    }
+    
     func getPost(){
         let url: String = "https://raw.githubusercontent.com/anton-natife/jsons/master/api/main.json"
         
@@ -51,10 +89,10 @@ extension ViewController: UITableViewDelegate{
             
         }
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 220
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        return 220
+//    }
 }
 
 extension ViewController: UITableViewDataSource{

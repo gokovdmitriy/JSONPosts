@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V8Q-WB-efL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="9pC-TG-sJv"/>
@@ -34,8 +34,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V8Q-WB-efL" secondAttribute="bottom" id="z1e-dv-mqY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HiK-2G-VD9"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="HiK-2G-VD9">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="2G8-ig-du2"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="sortBy" destination="2G8-ig-du2" id="MR1-Xl-0B2"/>
                         <outlet property="tableView" destination="V8Q-WB-efL" id="73V-SI-ARe"/>
                     </connections>
                 </viewController>
@@ -70,8 +75,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1645030659" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCG-xz-yhl" userLabel="timeshamp">
-                                <rect key="frame" x="265.5" y="761" width="108.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1645030659" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCG-xz-yhl" userLabel="timeshamp">
+                                <rect key="frame" x="219" y="761" width="155" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,7 +85,7 @@
                                 <rect key="frame" x="20" y="762.5" width="21" height="17.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-zB-CT4" userLabel="likesCount">
-                                <rect key="frame" x="61" y="761" width="77.5" height="18"/>
+                                <rect key="frame" x="51" y="761" width="77.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,8 +94,8 @@
                         <viewLayoutGuide key="safeArea" id="gog-49-hpi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cWt-zB-CT4" firstAttribute="leading" secondItem="ZRf-VO-G2s" secondAttribute="trailing" constant="20" id="0t0-jz-THB"/>
-                            <constraint firstItem="bCG-xz-yhl" firstAttribute="width" secondItem="beZ-V1-0VV" secondAttribute="width" multiplier="0.35" id="1uG-Mo-Sjv"/>
+                            <constraint firstItem="cWt-zB-CT4" firstAttribute="leading" secondItem="ZRf-VO-G2s" secondAttribute="trailing" constant="10" id="0t0-jz-THB"/>
+                            <constraint firstItem="bCG-xz-yhl" firstAttribute="width" secondItem="beZ-V1-0VV" secondAttribute="width" multiplier="0.5" id="1uG-Mo-Sjv"/>
                             <constraint firstItem="ZRf-VO-G2s" firstAttribute="top" secondItem="beZ-V1-0VV" secondAttribute="bottom" constant="20" id="2Ft-7v-Kq7"/>
                             <constraint firstItem="cWt-zB-CT4" firstAttribute="top" secondItem="beZ-V1-0VV" secondAttribute="bottom" constant="20" id="Cjt-kP-6Fa"/>
                             <constraint firstItem="cWt-zB-CT4" firstAttribute="width" secondItem="beZ-V1-0VV" secondAttribute="width" multiplier="0.25" id="Ed8-Jc-4hH"/>
