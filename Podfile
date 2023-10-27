@@ -8,4 +8,5 @@ target 'TestTaskJSONPosts' do
   # Pods for TestTaskJSONPosts
     pod 'Alamofire'
     pod 'SDWebImage'
+    pod 'SwiftLint'
 end

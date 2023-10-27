@@ -1,7 +1,8 @@
-import Foundation
 import UIKit
 import Alamofire
 import SDWebImage
+
+
 class PostViewController: UIViewController
 {
     
@@ -11,13 +12,12 @@ class PostViewController: UIViewController
     @IBOutlet weak var nameTitle: UILabel!
     @IBOutlet weak var postedTime: UILabel!
     
-    
-    
     var postInformation: Post?
     var postIDFromArray: Posts?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Posts"
         getPostInformationById()
     }
     
@@ -34,7 +34,6 @@ class PostViewController: UIViewController
             {
                 let responseModel = try! jsonDecoder.decode(PostServerResponce.self, from: responce.data!)
                 self.postInformation = responseModel.post!
-                
                 
             }
             nameTitle.text = self.postInformation?.title
