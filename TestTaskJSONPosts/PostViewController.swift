@@ -13,7 +13,7 @@ class PostViewController: UIViewController
     @IBOutlet weak var postedTime: UILabel!
     
     var postInformation: Post?
-    var postIDFromArray: Posts?
+    var postID: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,21 @@ class PostViewController: UIViewController
         
         let urlGetPostInfo: String = "https://raw.githubusercontent.com/anton-natife/jsons/master/api/posts/"
         let json: String = ".json"
-        let url: String = urlGetPostInfo+String((postIDFromArray?.postId)!)+json
+        let url: String = urlGetPostInfo+String((postID?.postId)!)+json
         
+        
+        //        AF.request(url)
+        //                    .responseDecodable(of: PostServerResponce.self, completionHandler: { [weak self] data in
+        //
+        //                        guard let self, case let .success(response) = data.result
+        //                        else
+        //                        {
+        //                            return
+        //
+        //                        }
+        //
+        //                        self.postInformation = response.post
+        //
         AF.request(url).responseJSON { [self] responce in
             
             let jsonDecoder = JSONDecoder()
@@ -47,6 +60,10 @@ class PostViewController: UIViewController
                 postImage.sd_setImage(with: url)
             }
         }
+        
+        
+        
+        
         func formatDate(_ timestamp: Int?) -> String {
             guard let timestamp = timestamp else {
                 return ""

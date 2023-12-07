@@ -8,5 +8,5 @@
 import Foundation
 struct ServerResponce : Codable {
     
-    let posts : [Posts]?
+    let posts : [Post]?
 }

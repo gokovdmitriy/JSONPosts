@@ -5,7 +5,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sortBy: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    var arrayOfPosts: [Posts] = []
+    var arrayOfPosts: [Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +45,13 @@ class ViewController: UIViewController {
     
     private func sortByDate() {
         print("sortByDate")
-        arrayOfPosts.sort { $0.timeshamp ?? 00 > $1.timeshamp ?? 00 }
+        arrayOfPosts.sort { $0.timeshamp ?? 0 > $1.timeshamp ?? 0 }
         tableView.reloadData()
     }
     
     private func sortByLikes() {
         print("sortByLikes")
-        arrayOfPosts.sort { $0.likes_count ?? 00 > $1.likes_count ?? 00 }
+        arrayOfPosts.sort { $0.likes_count ?? 0 > $1.likes_count ?? 0 }
         tableView.reloadData()
     }
     
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         let calendar = Calendar.current
         let daysDifference = calendar.dateComponents([.day], from: today, to: currentDate).day
         
-        return daysDifference ?? 00    }
+        return daysDifference ?? 0    }
 }
 
 private func doesTextFitInLabel(label: UILabel, text: String) -> Bool {
@@ -110,7 +110,7 @@ extension ViewController: UITableViewDelegate{
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = main.instantiateViewController(withIdentifier: "PostViewController") as? PostViewController {
-            viewController.postIDFromArray = self.arrayOfPosts[indexPath.row]
+            viewController.postID = self.arrayOfPosts[indexPath.row]
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }

@@ -14,7 +14,6 @@
 		5223249B2ADD9FD50051224B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5223249A2ADD9FD50051224B /* Assets.xcassets */; };
 		5223249E2ADD9FD50051224B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5223249C2ADD9FD50051224B /* LaunchScreen.storyboard */; };
 		522324A62ADDA21F0051224B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 522324A52ADDA21F0051224B /* Podfile */; };
-		522324A92ADDA4890051224B /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522324A82ADDA4880051224B /* Posts.swift */; };
 		522324AC2ADDA6EC0051224B /* ServerResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522324AB2ADDA6EC0051224B /* ServerResponce.swift */; };
 		522324AF2ADDAA940051224B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522324AD2ADDAA940051224B /* PostTableViewCell.swift */; };
 		522324B02ADDAA940051224B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522324AE2ADDAA940051224B /* PostTableViewCell.xib */; };
@@ -34,7 +33,6 @@
 		5223249D2ADD9FD50051224B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5223249F2ADD9FD50051224B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522324A52ADDA21F0051224B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		522324A82ADDA4880051224B /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		522324AB2ADDA6EC0051224B /* ServerResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponce.swift; sourceTree = "<group>"; };
 		522324AD2ADDAA940051224B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		522324AE2ADDAA940051224B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				522324AB2ADDA6EC0051224B /* ServerResponce.swift */,
-				522324A82ADDA4880051224B /* Posts.swift */,
 				522324B42AE01E960051224B /* PostViewModel.swift */,
 			);
 			path = Models;
@@ -136,6 +133,7 @@
 			buildConfigurationList = 522324A22ADD9FD50051224B /* Build configuration list for PBXNativeTarget "TestTaskJSONPosts" */;
 			buildPhases = (
 				8E0FF229198DC8F7F8AA5C6C /* [CP] Check Pods Manifest.lock */,
+				529B00C92AFBE70A009844B5 /* ShellScript */,
 				5223248A2ADD9FD20051224B /* Sources */,
 				5223248B2ADD9FD20051224B /* Frameworks */,
 				5223248C2ADD9FD20051224B /* Resources */,
@@ -216,6 +214,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTaskJSONPosts/Pods-TestTaskJSONPosts-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		529B00C92AFBE70A009844B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse \n    echo \"warning\"\nfi\n";
+		};
 		8E0FF229198DC8F7F8AA5C6C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,7 +266,6 @@
 				522324B22ADEAA3E0051224B /* PostViewController.swift in Sources */,
 				522324922ADD9FD20051224B /* AppDelegate.swift in Sources */,
 				522324942ADD9FD20051224B /* SceneDelegate.swift in Sources */,
-				522324A92ADDA4890051224B /* Posts.swift in Sources */,
 				522324AF2ADDAA940051224B /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

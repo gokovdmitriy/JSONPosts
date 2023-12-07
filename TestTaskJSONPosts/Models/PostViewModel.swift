@@ -23,6 +23,8 @@ struct Post : Codable {
     let text : String?
     let postImage : String?
     let likes_count : Int?
+    let preview_text : String?
+    var isExpanded: Bool = true
 
     enum CodingKeys: String, CodingKey {
 
@@ -32,6 +34,7 @@ struct Post : Codable {
         case text = "text"
         case postImage = "postImage"
         case likes_count = "likes_count"
+         case preview_text = "preview_text"
     }
 }
 
